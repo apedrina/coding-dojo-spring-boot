@@ -1,0 +1,35 @@
+server:
+  port: 8102
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:15432/postgres
+    username: postgres
+    password: pedrina
+    hikari:
+      connection-timeout: 5000
+      maximum-pool-size: 10
+      connection-test-query: select 1
+  activemq:
+    broker-url: tcp://localhost:61616
+
+app:
+  weather:
+    api:
+      url: http://api.openweathermap.org/data/2.5
+      key: dfec87074fc77e7a90d0d2e06a1a7d13
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework: ERROR
+    com.alissonpedrina: INFO
