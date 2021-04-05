@@ -25,6 +25,9 @@ mvn clean install
 
 ```
 
+<b>Warning</b>: we're using testContainers framework, so before running these above commands
+be sure you've the Docker running.
+
 ### Run
 
 To run the project first we need up either the postgresql and activeMq containers. To do so run the following commands:
@@ -89,7 +92,7 @@ http://localhost:8102/weather/London,uk
 To get the weather by ID:
 
 ```bash
-http://localhost:8102/weather/2172797
+http://localhost:8102/weather/id/2172797
 
 ```
 
@@ -107,7 +110,7 @@ http://localhost:8102/weather/zip/94040,us
 To get the weather by lat & lon:
 
 ```bash
-http://localhost:8102//weather/lat/35/long/139
+http://localhost:8102/weather/lat/35/long/139
 
 ```
 
@@ -120,7 +123,7 @@ http://localhost:8102/weather/bbox/12,32,15,37,10
 
 ```
 
-### Historic queries 
+### Historic queries
 
 To get the all historic weather queries:
 

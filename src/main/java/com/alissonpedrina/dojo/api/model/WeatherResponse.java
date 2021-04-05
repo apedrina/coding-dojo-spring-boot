@@ -25,10 +25,17 @@ import java.util.Map;
         "id",
         "name",
         "cod",
-        "timezone"
+        "timezone",
+        "calctime",
+        "cnt"
+
 })
 public class WeatherResponse {
 
+    @JsonProperty("calctime")
+    private String calctime;
+    @JsonProperty("cnt")
+    private String cnt;
     @JsonProperty("coord")
     private Coord coord;
     @JsonProperty("weather")

@@ -14,7 +14,7 @@ public class DojoAdvice {
 
     @ExceptionHandler(JsonProcessingException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public ErrorResponse jsonProcessingException(HttpClientErrorException e) {
+    public ErrorResponse jsonProcessingException(JsonProcessingException e) {
         return createErrorDTO(HttpStatus.NOT_FOUND, "DojoError: JsonProcessing error.", e.getMessage());
 
     }

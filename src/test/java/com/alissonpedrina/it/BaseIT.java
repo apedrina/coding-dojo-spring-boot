@@ -4,9 +4,10 @@ import com.alissonpedrina.dojo.api.client.WeatherRestClient;
 import com.alissonpedrina.dojo.api.resources.WeatherController;
 import com.alissonpedrina.dojo.config.ProducerConfig;
 import com.alissonpedrina.dojo.config.ReceiverConfig;
+import com.alissonpedrina.dojo.domain.Query;
+import com.alissonpedrina.dojo.domain.query.*;
 import com.alissonpedrina.dojo.jms.Producer;
 import com.alissonpedrina.dojo.repositories.JdbcWeatherRepository;
-import com.alissonpedrina.dojo.service.WeatherService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -30,7 +31,12 @@ import java.io.IOException;
 @Slf4j
 @ExtendWith(SpringExtension.class)
 @DirtiesContext
-@SpringBootTest(classes = {DatasourceITConfig.class, Producer.class, ReceiverConfig.class, ProducerConfig.class, JdbcWeatherRepository.class, WeatherController.class, WeatherService.class, BeansIT.class, WeatherRestClient.class})
+@SpringBootTest(classes = {
+        DatasourceITConfig.class, Producer.class, ReceiverConfig.class,
+        ProducerConfig.class, JdbcWeatherRepository.class, WeatherController.class,
+        ById.class, ByBox.class, ByCities.class, ByQueries.class,
+        ByCity.class, ByLatLon.class, ByZip.class,
+        Query.class, BeansIT.class, WeatherRestClient.class})
 @TestPropertySource("classpath:application-integration-containers.properties")
 @Testcontainers
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)

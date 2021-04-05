@@ -100,5 +100,14 @@ public class RestControllerTest extends RestBaseIT {
 
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {"London", "Noordwijk", "São Paulo"})
+    public void get_cities(String city) throws Exception {
+        this.mockMvc.perform(get(String.format("/weather/queries/%s", city)))
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(status().isOk());
+
+    }
+
 }
 
