@@ -6,7 +6,7 @@ Welcome to the Spring Boot Coding Dojo!
 ### Introduction
 
 This is a simple application that requests its data from [OpenWeather](https://openweathermap.org/) and stores the
-result in a database. The current implementation has quite a few problems making it a non-production ready product.
+result in a database.
 
 ### Requirements
 
