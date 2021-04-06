@@ -2,17 +2,8 @@ server:
   port: 8102
 
 spring:
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:15432/postgres
-    username: postgres
-    password: pedrina
-    hikari:
-      connection-timeout: 5000
-      maximum-pool-size: 10
-      connection-test-query: select 1
-  activemq:
-    broker-url: tcp://localhost:61616
+  profiles:
+    active: dev
 
 app:
   weather:
@@ -33,3 +24,36 @@ logging:
     ROOT: INFO
     org.springframework: ERROR
     com.alissonpedrina: INFO
+    com.alissonpedrina.dojo.config: INFO
+
+---
+
+spring:
+  porfiles: dev
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: pedrina
+    hikari:
+      connection-timeout: 5000
+      maximum-pool-size: 10
+      connection-test-query: select 1
+  activemq:
+    broker-url: tcp://localhost:61616
+
+---
+
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://postgres-container:5432/postgres
+    username: postgres
+    password: pedrina
+    hikari:
+      connection-timeout: 5000
+      maximum-pool-size: 10
+      connection-test-query: select 1
+  activemq:
+    broker-url: tcp://activemq-container:61616

@@ -34,7 +34,7 @@ To run the project first we need up either the postgresql and activeMq container
 
 ```bash
 cd <project_root>/docker
-docker-compose up
+docker-compose -f docker-compose-infra.yml up
 
 ```
 
@@ -43,6 +43,23 @@ Then run the commands bellow:
 ```bash
 cd <project_root>
 java -jar target/coding-dojo.jar
+
+```
+
+### Run with docker
+
+To run the project with docker we need first create the coding-dojo image, to do so run:
+```bash
+cd <project_root>/docker
+docker-compose -f docker-compose-build.yml build
+
+```
+
+Then:
+
+```bash
+cd <project_root>/docker
+docker-compose up
 
 ```
 

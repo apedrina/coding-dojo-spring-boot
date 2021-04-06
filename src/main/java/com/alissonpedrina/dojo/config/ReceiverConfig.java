@@ -1,8 +1,8 @@
 package com.alissonpedrina.dojo.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.annotation.EnableJms;
@@ -11,8 +11,8 @@ import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import javax.jms.Session;
 import java.util.List;
 
+@Slf4j
 @Configuration
-@ConditionalOnProperty("spring.activemq.broker-url")
 @EnableJms
 public class ReceiverConfig {
 
@@ -25,6 +25,8 @@ public class ReceiverConfig {
 
     @Bean
     public ActiveMQConnectionFactory receiverActiveMQConnectionFactory() {
+        log.info("Configuring ActiveMQ Receiver Connection Factory.");
+        log.info("broker URL: {}.", brokerUrl);
         ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory();
         activeMQConnectionFactory.setTrustedPackages(TRUSTED_PACKAGES);
         activeMQConnectionFactory.setBrokerURL(brokerUrl);

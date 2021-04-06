@@ -25,7 +25,6 @@
     </properties>
 
     <dependencies>
-
         <!-- SWAGGER -->
         <dependency>
             <groupId>io.springfox</groupId>
@@ -129,6 +128,20 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-help-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>show-profiles</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>active-profiles</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.2</version>
                 <configuration>
@@ -143,6 +156,21 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <spring.activemq.broker-url>tcp://localhost:61616</spring.activemq.broker-url>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <spring.activemq.broker-url>tcp://activemq-container:61616</spring.activemq.broker-url>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
 

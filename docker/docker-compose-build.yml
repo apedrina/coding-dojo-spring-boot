@@ -1,0 +1,15 @@
+version: "3.2"
+
+services:
+  dojo:
+    build: ../
+    image: coding-dojo:latest
+    ports:
+      - "8102:8102"
+    container_name: coding-dojo
+    networks:
+      - apedrina-network
+
+networks:
+  apedrina-network:
+    driver: bridge

@@ -1,22 +1,12 @@
 version: "3.2"
 
 services:
-  dojo:
-    image: coding-dojo:latest
-    ports:
-      - "8102:8102"
-    container_name: coding-dojo
-    networks:
-      - apedrina-network
-
   active:
     image: apedrina/activemq:latest
     ports:
       - "61616:61616"
       - "8161:8161"
     container_name: activemq-container
-    networks:
-      - apedrina-network
 
   postgres-compose:
     image: postgres
@@ -25,8 +15,6 @@ services:
     ports:
       - "5432:5432"
     container_name: postgres-container
-    networks:
-      - apedrina-network
 
   pgadmin-compose:
     image: dpage/pgadmin4
@@ -37,9 +25,3 @@ services:
       - "80:80"
     depends_on:
       - postgres-compose
-    networks:
-      - apedrina-network
-
-networks:
-  apedrina-network:
-    driver: bridge

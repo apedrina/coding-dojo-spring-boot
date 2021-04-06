@@ -3,7 +3,6 @@ package com.alissonpedrina.dojo.config;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.annotation.EnableJms;
@@ -13,7 +12,6 @@ import org.springframework.jms.core.JmsTemplate;
 import java.util.List;
 
 @Configuration
-@ConditionalOnProperty("spring.activemq.broker-url")
 @EnableJms
 @Slf4j
 public class ProducerConfig {
@@ -28,6 +26,7 @@ public class ProducerConfig {
     @Bean
     public ActiveMQConnectionFactory senderActiveMQConnectionFactory() {
         log.info("Configuring ActiveMQ Sender Connection Factory.");
+        log.info("broker URL: {}.", brokerUrl);
         ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory();
         activeMQConnectionFactory.setTrustedPackages(TRUSTED_PACKAGES);
         activeMQConnectionFactory.setBrokerURL(brokerUrl);
