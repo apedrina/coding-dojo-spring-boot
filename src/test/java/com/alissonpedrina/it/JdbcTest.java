@@ -1,7 +1,7 @@
 package com.alissonpedrina.it;
 
 import com.alissonpedrina.commons.TestUtils;
-import com.alissonpedrina.dojo.api.model.WeatherResponse;
+import com.alissonpedrina.java17.api.model.WeatherResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeAll;

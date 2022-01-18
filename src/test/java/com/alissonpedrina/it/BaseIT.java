@@ -1,13 +1,13 @@
 package com.alissonpedrina.it;
 
-import com.alissonpedrina.dojo.api.client.WeatherRestClient;
-import com.alissonpedrina.dojo.api.resources.WeatherController;
-import com.alissonpedrina.dojo.config.ProducerConfig;
-import com.alissonpedrina.dojo.config.ReceiverConfig;
-import com.alissonpedrina.dojo.domain.Query;
-import com.alissonpedrina.dojo.domain.query.*;
-import com.alissonpedrina.dojo.jms.Producer;
-import com.alissonpedrina.dojo.repositories.JdbcWeatherRepository;
+import com.alissonpedrina.java17.api.client.WeatherRestClient;
+import com.alissonpedrina.java17.api.resources.WeatherController;
+import com.alissonpedrina.java17.config.ProducerConfig;
+import com.alissonpedrina.java17.config.ReceiverConfig;
+import com.alissonpedrina.java17.domain.Query;
+import com.alissonpedrina.java17.domain.query.*;
+import com.alissonpedrina.java17.jms.Producer;
+import com.alissonpedrina.java17.repositories.JdbcWeatherRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;

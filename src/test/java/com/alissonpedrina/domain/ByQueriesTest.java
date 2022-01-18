@@ -1,9 +1,9 @@
 package com.alissonpedrina.domain;
 
 import com.alissonpedrina.commons.TestUtils;
-import com.alissonpedrina.dojo.api.model.WeatherResponse;
-import com.alissonpedrina.dojo.domain.query.ByQueries;
-import com.alissonpedrina.dojo.repositories.JdbcWeatherRepository;
+import com.alissonpedrina.java17.api.model.WeatherResponse;
+import com.alissonpedrina.java17.domain.query.ByQueries;
+import com.alissonpedrina.java17.repositories.JdbcWeatherRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

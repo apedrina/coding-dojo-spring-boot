@@ -1,8 +1,8 @@
 package com.alissonpedrina.it;
 
 import com.alissonpedrina.commons.TestUtils;
-import com.alissonpedrina.dojo.domain.Query;
-import com.alissonpedrina.dojo.domain.TypeQuery;
+import com.alissonpedrina.java17.domain.Query;
+import com.alissonpedrina.java17.domain.TypeQuery;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

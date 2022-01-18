@@ -1,6 +1,6 @@
 package com.alissonpedrina.it;
 
-import com.alissonpedrina.dojo.config.ConfigEnum;
+import com.alissonpedrina.java17.config.ConfigEnum;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;

@@ -1,10 +1,10 @@
 package com.alissonpedrina.domain;
 
 import com.alissonpedrina.commons.TestUtils;
-import com.alissonpedrina.dojo.api.model.WeatherResponse;
-import com.alissonpedrina.dojo.domain.Query;
-import com.alissonpedrina.dojo.domain.query.ByCity;
-import com.alissonpedrina.dojo.jms.Producer;
+import com.alissonpedrina.java17.api.model.WeatherResponse;
+import com.alissonpedrina.java17.domain.Query;
+import com.alissonpedrina.java17.domain.query.ByCity;
+import com.alissonpedrina.java17.jms.Producer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
